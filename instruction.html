@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по работе с ботом - АО "Газстройпром"</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(31, 60, 112, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .card h3 {
+            color: #2980b9;
+            margin: 15px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .button-example {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 3px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        
+        .dynamic-element {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #2ecc71;
+        }
+        
+        .contact-info {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header dynamic-element">
+            <h1>АО "Газстройпром"</h1>
+            <div class="subtitle">Система обработки входящих файлов и задач</div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Общая информация</h2>
+                <p>Данный Telegram-бот предназначен для автоматизации обработки входящих файлов, документов и задач в рамках рабочих процессов АО "Газстройпром".</p>
+                <div class="highlight">
+                    <strong>Важно:</strong> Все файлы и сообщения обрабатываются в специальных темах (вкладках) внутри рабочей группы.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Основные темы (вкладки)</h2>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Входящие</strong> - сюда поступают все новые файлы и сообщения для обработки
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Отработано</strong> - сюда перемещаются файлы после обработки
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Архив</strong> - архивные материалы
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Сценарий: Обработка нового файла</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Загрузка файла</strong><br>
+                        Отправьте файл, фото или текстовое сообщение в тему <strong>"Входящие"</strong> рабочей группы
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Появление кнопок</strong><br>
+                        Бот автоматически добавит сообщение с кнопками: <span class="button-example">Вне зоны</span> и <span class="button-example">В работу</span>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Выбор действия</strong><br>
+                        Нажмите <span class="button-example">Вне зоны</span>, если задача не относится к сфере ответственности ДОиМП МТР<br>
+                        Нажмите <span class="button-example">В работу</span>, если задача требует обработки
+                    </div>
+                </div>
+            </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Сценарий: Назначение ответственного</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Выбор ответственного</strong><br>
+                        После нажатия <span class="button-example">В работу</span> появится список ответственных сотрудников
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Назначение исполнителя</strong><br>
+                        Выберите ответственного за выполнение задачи из списка
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Выбор действия</strong><br>
+                        Появятся кнопки: <span class="button-example">Отправить в работу</span> и <span class="button-example">Доп. комментарий</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Сценарий: Добавление комментария</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Нажатие кнопки</strong><br>
+                        Нажмите <span class="button-example">Доп. комментарий</span> для добавления пояснений к задаче
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Добавление пометки</strong><br>
+                        К сообщению будет добавлена пометка <strong>"В работу (ФИО)"</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Ввод комментария</strong><br>
+                        Ответьте на сообщение бота с просьбой ввести комментарий<br>
+                        <em>Важно: комментарий должен быть отправлен как ответ на сообщение бота</em>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Перенос задачи</strong><br>
+                        Сообщение с файлом/фото/текстом будет перенесено в тему <strong>"Отработано"</strong> с добавленным комментарием
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Сценарий: Отправка в работу без комментария</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Нажатие кнопки</strong><br>
+                        Нажмите <span class="button-example">Отправить в работу</span> для немедленной отправки задачи
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Перенос задачи</strong><br>
+                        Сообщение будет перенесено в тему <strong>"Отработано"</strong> с пометкой <strong>"В работу (ФИО)"</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <h2>Правила работы с ботом</h2>
+                
+                <h3>Для эффективной работы следуйте этим правилам:</h3>
+                
+                <div class="step">
+                    <div class="step-number">•</div>
+                    <div class="step-content">
+                        Всегда отправляйте файлы и сообщения в тему <strong>"Входящие"</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">•</div>
+                    <div class="step-content">
+                        Назначайте ответственных только из предоставленного списка
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">•</div>
+                    <div class="step-content">
+                        При добавлении комментариев обязательно отвечайте на сообщение бота
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">•</div>
+                    <div class="step-content">
+                        Не отправляйте случайные сообщения в темы бота
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Техническая поддержка</h3>
+            <p>При возникновении вопросов или проблем с работой бота, обратитесь в отдел IT-поддержки АО "Газстройпром"</p>
+            <p>Email: support@gazstroypro.ru | Телефон: +7 (XXX) XXX-XX-XX</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 АО "Газстройпром" - Автоматизированная система обработки задач</p>
+            <p>Версия инструкции: 1.0</p>
+        </div>
+    </div>
+</body>
+</html>
